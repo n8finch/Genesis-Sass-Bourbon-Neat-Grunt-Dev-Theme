@@ -2,17 +2,17 @@
 --------------------------------------------- */
 
 .menu .menu-item:focus {
-  position: static;
+	position: static;
 }
 
 .menu .menu-item > a:focus + ul.sub-menu,
 .menu .menu-item.sfHover > ul.sub-menu {
-  left: auto;
-  opacity: 1;
+	left: auto;
+	opacity: 1;
 }
 
-.sub-menu-toggle,
-.menu-toggle {
-  display: none;
-  visibility: hidden;
+.menu-toggle,
+.sub-menu-toggle {
+	display: none;
+	visibility: hidden;
 }
