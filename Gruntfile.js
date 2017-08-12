@@ -27,9 +27,25 @@ module.exports = function (grunt) {
       }
     },
 
+	browserSync: {
+		dev: {
+                bsFiles: {
+                    src : [
+                        'style.css',
+						'*.php',
+						'*/*.php'
+                    ]
+                },
+                options: {
+                    watchTask: true,
+                    proxy: 'devsite.dev'
+                }
+	    }
+	},
+
     watch: {
       files: ['assets/css/*.css', 'assets/js/*.js', 'assets/sass/**/*.scss'],
-      tasks: ['sass']
+      tasks: ['sass'],
     }
   });
 
@@ -40,8 +56,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks('grunt-browser-sync');
 
-  grunt.registerTask('default', ['sass', 'watch']);
+  grunt.registerTask('default', ['sass', 'browserSync', 'watch']);
   grunt.registerTask('post', 'postcss');
 
 };
