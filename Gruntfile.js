@@ -34,6 +34,8 @@ module.exports = function (grunt) {
                         'style.css',
 						'*.php',
 						'*/*.php'
+						'*.js',
+						'*/*.js'
                     ]
                 },
                 options: {
